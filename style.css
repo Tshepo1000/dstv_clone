@@ -1,0 +1,344 @@
+:root {
+    --nav-color: #41ead4;
+    --main-color: white;
+    --dark-bgcolor: rgb(8, 8, 8);
+    --border-color: rgba(151, 145, 145, 0.753);
+    --content: rgb(27, 25, 25);
+  }
+  
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 50%);
+    font-family: 'Palanquin', sans-serif;
+}
+
+/* navigation menu */
+.navigation-container{
+    position: fixed;
+    top: 4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 100vw;
+    height: 9vh;
+    padding: 5px 0 0px 50px;
+}
+#navigationID{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px 30px 30px 0;
+    height: 8vh;
+}
+
+#logo{
+    width: 90px;
+    height: 25px;
+    margin-top: -1%;
+}
+
+#navigationID a{
+    text-decoration: none;
+    color: var(--main-color);
+    font-family: "Gill Sans", sans-serif;
+    font-size: 15px;
+}
+
+#navigationID a:hover{
+    transition: .8s;
+    color: var(--nav-color);
+}
+
+#horizontal-line{
+    position: fixed;
+    margin-left: 3%;
+    width: 93%;
+    height: 1px;
+    margin-top:4%;
+    background-color: rgba(206, 197, 197, 0.432);
+    z-index: 1;
+    
+}
+
+/* profile icon and search icon */
+:is(.profile-container, .search-container){
+    position: absolute;
+    height: 3vh;
+    width: 3vw;
+    display: flex;
+    flex-direction: row;
+    top: 35%;
+    cursor: pointer;
+}
+
+.profile-container{
+    position: relative;
+    left: 91%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.profile-container span{
+    position: absolute;
+    left: 65%;
+    top: 17%;
+    color: var(--main-color);
+}
+
+.search-container{
+    display: flex;
+    left: 94%;
+    height: 4vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-container img{
+    height: 100%;
+
+}
+
+.search-container i{
+    font-size: larger;
+    color: var(--main-color);
+}
+
+.search-container i:hover{
+    color: var(--nav-color);
+}
+
+
+/* dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 840%;
+    left: -70%;
+    transform: translate(-50%, -50%);
+    background: var(--dark-bgcolor);
+    min-width: 100px;
+    box-shadow: 0 0 6px var(--dark-bgcolor);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    margin-top: 20px;
+    width: 200px; /* adjust as needed */
+  }
+
+  .dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 77%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--border-color) transparent;
+}
+
+.dropdown-content p{
+    font-family: "Gill Sans", sans-serif;
+}
+
+.profile-container:hover .dropdown-content{
+    display: block;
+}
+
+.profile-container:hover #dropdownSymbol{
+    transform: rotate(180deg);
+    transition: .4s;
+}
+
+:is(.user, .update, .settings, .liveChat, .signOut){
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 6vh;
+    /* border: 2px solid black; */
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    color: var(--main-color);
+    font-size: small;
+    /* position: absolute; */
+}
+
+.user:hover{
+    background-color: var(--content);
+}
+
+:is(.update, .settings, .liveChat){
+    border-bottom: 1px solid var(--border-color);
+}
+
+.update{
+    border-top: 1px solid var(--border-color);
+}
+
+#profile-icon{
+    height: 3vh;
+}
+
+.update:hover{
+    color: var(--nav-color);
+}
+
+.signOut:hover{
+    color: var(--nav-color);
+}
+
+.settings i{
+    font-size: large;
+}
+
+.settings:hover .bi-gear{
+    color: var(--nav-color);
+}
+
+.settings:hover p{
+    color: var(--nav-color);
+}
+
+.liveChat:hover p{
+    color: var(--nav-color);
+}
+
+.liveChat:hover .bi-chat-left-text{
+    color: var(--nav-color);
+}
+/* navigation menu */
+
+/* first section content styling */
+.first-section{
+    height: 100vh;
+    width: 100vw;
+}
+
+/* background image with overlay */
+.gradient-overlay {
+    background: url("./images/mna_16x9_xlrg.jpg");
+    background-size: 85%;
+    background-position: center right;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.gradient-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to right, rgba(0,0,0,1)35%, rgba(0,0,0,0)80%);
+}
+
+.leftside-content img{
+    height: 60px;
+    width: 70px;
+}
+
+.leftside-content{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid white; */
+    position: absolute;
+    top: 50%;
+    left: 23%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    height: 45vh;
+    justify-content: space-between;
+    color: white;
+}
+
+.leftside-content h1{
+    font-family: "Gill Sans", sans-serif;
+    font-size: 3.5rem;
+    font-weight: bolder;
+}
+
+.leftside-content h3{
+    color: var(--border-color);
+    font-family: 'Palanquin', sans-serif;
+    font-size: 13px;
+}
+
+.leftside-content p{
+    color: var(--main-color);
+    font-family: 'Palanquin', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    /* letter-spacing: 1px; */
+}
+
+/* buttons inside the first section */
+.first-section-buttons{
+    display: flex;
+    gap: 15px;
+    height: 10vh;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+.first-section-buttons #watch-now{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--nav-color);
+    font-size: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#watch-now:hover{
+    background-color: #44c0b0;;
+}
+
+.first-section-buttons #info, #add-to-playlist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--main-color);
+    border-radius: 50px;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#info:hover{
+    background-color: var(--nav-color);
+    color: black;
+    border: none;
+    transition: .6s;
+}
+
+#add-to-playlist:hover{
+    background-color: var(--nav-color);
+    color: black;
+    border: none;
+    transition: .6s;
+}
+
