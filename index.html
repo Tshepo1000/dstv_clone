@@ -9,7 +9,7 @@
 
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- navigation content -->
@@ -64,8 +64,8 @@
                 </div>
             </div>
         </div>
-        <div class="search-container">
-            <i class="bi bi-search"></i>
+        <div class="search-container" id="search-container">
+            <i class="bi bi-search" id="search-icon-id" onclick="displaySearchPage();"></i>
         </div>
     </div>
     <span id="horizontal-line"></span>
@@ -87,6 +87,13 @@
                     <button id="info"><i class="bi bi-info-lg" style="font-size: 20px;"></i></button>
                     <button id="add-to-playlist"><i class="bi bi-plus" style="font-size: 35px;"></i></button>
                 </div>
+            </div>
+        </div>
+
+        <div class="search-active" id="search-active-id">
+            <input type="text" id="search-text" placeholder="What are you looking for?" autofocus onfocus="searchInputFieldFocus()">
+            <div class="close-search-page">
+                <i class="bi bi-x-lg" id="close-search-page-icon"></i>
             </div>
         </div>
     </section>
